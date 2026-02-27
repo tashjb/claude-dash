@@ -98,8 +98,8 @@ export default function App() {
           <div className="logo">
             <span className="logo-mark">◈</span>
             <div>
-              <div className="logo-title">SecureMetrics</div>
-              <div className="logo-sub">Financial Services Security Program</div>
+              <div className="logo-title">TashDash</div>
+              <div className="logo-sub">It can't be worse than nothing</div>
             </div>
           </div>
         </div>
