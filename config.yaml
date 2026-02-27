@@ -1,0 +1,66 @@
+# ============================================================
+#  Security Metrics Dashboard — Configuration
+#  Copy this file to config.yaml and fill in your credentials.
+#  Never commit config.yaml to source control.
+# ============================================================
+
+connectors:
+
+  # ----------------------------------------------------------
+  # Microsoft Defender for Endpoint
+  # App registration needs: SecurityAlert.Read.All,
+  # Machine.Read.All, Vulnerability.Read.All, SecureScore.Read.All
+  # ----------------------------------------------------------
+  microsoft_defender:
+    enabled: false
+    tenant_id: "YOUR_TENANT_ID"
+    client_id: "YOUR_APP_CLIENT_ID"
+    client_secret: "YOUR_APP_CLIENT_SECRET"
+
+  # ----------------------------------------------------------
+  # Okta
+  # Create an API token in Okta Admin > Security > API
+  # ----------------------------------------------------------
+  okta:
+    enabled: false
+    domain: "yourorg.okta.com"       # e.g. mycompany.okta.com
+    api_token: "YOUR_OKTA_API_TOKEN"
+
+  # ----------------------------------------------------------
+  # Spreadsheet ingestion
+  # Drop .xlsx or .csv files in the watch_directory, then
+  # call POST /api/connectors/sync/spreadsheet  — or use the
+  # drag-and-drop upload in the dashboard UI.
+  #
+  # Required columns: domain, metric_key, metric_value
+  # Optional columns: metric_label, snapshot_date, source
+  #
+  # Valid domains:
+  #   vulnerability_management | endpoint_protection |
+  #   identity_access | incident_response |
+  #   phishing_awareness | compliance
+  # ----------------------------------------------------------
+  spreadsheet:
+    watch_directory: "./data/uploads"
+
+# ----------------------------------------------------------
+# Future connectors — add your own following the pattern
+# in backend/connectors/. Then register in connectors/__init__.py
+# ----------------------------------------------------------
+# qualys:
+#   enabled: false
+#   platform: "qualysapi.qg2.apps.qualys.com"
+#   username: "YOUR_USERNAME"
+#   password: "YOUR_PASSWORD"
+#
+# crowdstrike:
+#   enabled: false
+#   client_id: "YOUR_CLIENT_ID"
+#   client_secret: "YOUR_CLIENT_SECRET"
+#   base_url: "https://api.crowdstrike.com"
+#
+# servicenow:
+#   enabled: false
+#   instance: "yourinstance.service-now.com"
+#   username: "YOUR_USERNAME"
+#   password: "YOUR_PASSWORD"
