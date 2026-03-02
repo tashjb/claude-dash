@@ -1,0 +1,11 @@
+domain,metric_key,metric_value,metric_label,snapshot_date,source
+vulnerability_management,patch_compliance_pct,97.2,,2024-01-15,Patching Tool
+vulnerability_management,critical_vuln_mttr_days,12.5,,2024-01-15,Patching Tool
+endpoint_protection,endpoint_coverage_pct,99.1,,2024-01-15,MDM Report
+identity_access,mfa_enrollment_pct,98.4,,2024-01-15,Okta Export
+identity_access,orphan_account_pct,0.8,,2024-01-15,HR Reconciliation
+incident_response,mttd_hours,3.2,,2024-01-15,SOC Report
+incident_response,mttr_hours,18.7,,2024-01-15,SOC Report
+phishing_awareness,click_rate_pct,2.9,,2024-01-15,KnowBe4
+phishing_awareness,training_completion_pct,96.5,,2024-01-15,LMS Export
+compliance,controls_coverage_pct,94.2,,2024-01-15,GRC Tool
